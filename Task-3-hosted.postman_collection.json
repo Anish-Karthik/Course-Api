@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "ae2eef5c-92c5-46c6-b83f-bdb42f380d70",
+		"name": "Task-3-hosted",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26801592"
+	},
+	"item": [
+		{
+			"name": "Admin routes token",
+			"item": [
+				{
+					"name": "Admin sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "anish@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://anish-karthik-course-api.onrender.com/admin/signup",
+							"protocol": "https",
+							"host": [
+								"anish-karthik-course-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin sign in",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "anish@gmail.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "password",
+								"value": "123456",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "anish@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://anish-karthik-course-api.onrender.com/admin/login",
+							"protocol": "https",
+							"host": [
+								"anish-karthik-course-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin create course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "anish@gmail.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFuaXNoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY5MTY3MDQ4MCwiZXhwIjoxNjkxNjkyMDgwfQ.6l8o_yterhwmfvEQ-eiYF5t9SAcCe2jF_SsAl3Ovgvg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Full stack development\",\n    \"description\": \"Full stack dev course by anish\",\n    \"price\": 5999\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://anish-karthik-course-api.onrender.com/admin/courses",
+							"protocol": "https",
+							"host": [
+								"anish-karthik-course-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin update course",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFuaXNoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY5MTY3MDQ4MCwiZXhwIjoxNjkxNjkyMDgwfQ.6l8o_yterhwmfvEQ-eiYF5t9SAcCe2jF_SsAl3Ovgvg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Full stack development (new)\",\n    \"description\": \"Full stack dev course by Anish Karthik\",\n    \"price\": 5599\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://anish-karthik-course-api.onrender.com/admin/courses/64d49715003dc0344cca7d14",
+							"protocol": "https",
+							"host": [
+								"anish-karthik-course-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"courses",
+								"64d49715003dc0344cca7d14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFuaXNoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY5MTY3MDQ4MCwiZXhwIjoxNjkxNjkyMDgwfQ.6l8o_yterhwmfvEQ-eiYF5t9SAcCe2jF_SsAl3Ovgvg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://anish-karthik-course-api.onrender.com/admin/courses/",
+							"protocol": "https",
+							"host": [
+								"anish-karthik-course-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"courses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFuaXNoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY5MTY3MDQ4MCwiZXhwIjoxNjkxNjkyMDgwfQ.6l8o_yterhwmfvEQ-eiYF5t9SAcCe2jF_SsAl3Ovgvg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://anish-karthik-course-api.onrender.com/admin/courses/64d49715003dc0344cca7d14",
+							"protocol": "https",
+							"host": [
+								"anish-karthik-course-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"courses",
+								"64d49715003dc0344cca7d14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User routes",
+			"item": [
+				{
+					"name": "User sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"dharun@gmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://anish-karthik-course-api.onrender.com/users/signup",
+							"protocol": "https",
+							"host": [
+								"anish-karthik-course-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User sign in",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "raman@gmail.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "123456",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"dharun@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://anish-karthik-course-api.onrender.com/users/login",
+							"protocol": "https",
+							"host": [
+								"anish-karthik-course-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View course",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"value": "dharun@gmail.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "123456",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://anish-karthik-course-api.onrender.com/users/courses/64d49715003dc0344cca7d14",
+							"protocol": "https",
+							"host": [
+								"anish-karthik-course-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"courses",
+								"64d49715003dc0344cca7d14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User get courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"value": "dharun@gmail.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "123456",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://anish-karthik-course-api.onrender.com/users/courses",
+							"protocol": "https",
+							"host": [
+								"anish-karthik-course-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
